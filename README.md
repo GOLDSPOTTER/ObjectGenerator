@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ObjectGenerator : MonoBehaviour
 {
-    public GameObject GeneratedLocations;
+    public GameObject Locations;
     public GameObject RoomObjects;
 
     void CreateObject(GameObject objectToClone, GameObject locationObject)
@@ -19,7 +19,7 @@ public class ObjectGenerator : MonoBehaviour
 
     void Start()
     {
-        foreach (Transform location in GeneratedLocations.transform)
+        foreach (Transform location in Locations.transform)
         {
             int randomNumber = Random.Range(0, RoomObjects.transform.childCount);
             CreateObject(RoomObjects.transform.GetChild(randomNumber).gameObject, location.gameObject);
